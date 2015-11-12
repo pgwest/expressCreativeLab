@@ -38,6 +38,9 @@ h1 {
 #employees .employee .name {
   background-color: #ffa;
 }
+#employees .employee .url {
+  background-color: #ffa;
+}
 #employees .employee input#delete {
   margin-top: -17px;
   margin-left: 255px;

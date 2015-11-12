@@ -4,7 +4,7 @@ block content
     h1= "Edit Employee"
     div.newemployee
         form( method="post")
-            input(name="_id", type="hidden", value=employee._id.toHexString()) 
+            input(name="_id", type="hidden", value=employee._id.toHexString())
             div
                 div
                     span.label Title :
@@ -12,6 +12,9 @@ block content
                 div
                     span.label Name :
                     input(type="text", name="name", id="editEmployeeName", value=employee.name)
+                div
+                    span.label ImageURL :
+                    input(type="text", name="url", id="editEmployeeUrl", value=employee.url)
                 div#editEmployeeSubmit
                     input(type="submit", value="Update")
         a(href="/")!= "Back to Employee List"

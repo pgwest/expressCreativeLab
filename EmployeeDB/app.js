@@ -54,7 +54,8 @@ app.get('/employee/new', function(req, res) {
 app.post('/employee/new', function(req, res){
     employeeProvider.save({
         title: req.param('title'),
-        name: req.param('name')
+        name: req.param('name'),
+        url: req.param('url')
     }, function( error, docs) {
         res.redirect('/')
     });
@@ -64,8 +65,9 @@ app.post('/employee/new', function(req, res){
 app.get('/employee/:id/edit', function(req, res) {
 	employeeProvider.findById(req.param('_id'), function(error, employee) {
 		res.render('employee_edit',
-		{ 
+		{
 			title: employee.title,
+      url: employee.url,
 			employee: employee
 		});
 	});
@@ -75,7 +77,8 @@ app.get('/employee/:id/edit', function(req, res) {
 app.post('/employee/:id/edit', function(req, res) {
 	employeeProvider.update(req.param('_id'),{
 		title: req.param('title'),
-		name: req.param('name')
+		name: req.param('name'),
+    url: req.param('url')
 	}, function(error, docs) {
 		res.redirect('/')
 	});
