@@ -80,6 +80,7 @@ app.post('/employee/:id/edit', function(req, res) {
 		name: req.param('name'),
     url: req.param('url')
 	}, function(error, docs) {
+    console.log(error);
 		res.redirect('/')
 	});
 });
